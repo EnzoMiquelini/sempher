@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-VariableFont_wght.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +10,7 @@
 }
 
 body {
+    font-family: Montserrat;
     border: 0;
     /* Tela-Inicial */
     width: 100%;
@@ -37,6 +43,49 @@ main{
     height: 650px;
     background: #fff;
     border-radius: 10px;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.info-title{
+    font-size: 24px;
+    padding: 0px 53px;
+    font-weight: bold;
+    color: #754AC1;
+    text-align: center;
+}
+
+.info-p{
+    font-size: 24px;
+    text-align: center;
+}
+
+.info-date{
+    font-size: 32px;
+    color: #754AC1;
+}
+
+.info-participar{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.btn-participar{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #754AC1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
