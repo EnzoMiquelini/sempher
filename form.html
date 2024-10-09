@@ -6,40 +6,54 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/header.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <div class="logo-container">
-            <div class="logo logo1">
-                <img src="img/unifae.png" alt="Unifae Logo">
-            </div>
-            <div class="logo logo2">
-                <img src="img/sempher.png" alt="Sempher Logo">
-            </div>
-            <div class="logo logo3">
-                <img src="img/asw.png" alt="AWS Logo">
-            </div>
+<main>
+    <div class="logo-container">
+        <div class="logo logo1">
+            <img src="img/unifae.png" alt="Unifae Logo">
         </div>
-        <div class="card-container">
-            <div class="thanks-container">
-
-                <img class="success" src="img/success.png" alt="Sucesso">
-                <h1>OBRIGADO!</h1>
-
-                <p class="part">Você está participando!</p>
-                <p class="text-insta">Acompanhe o instagram da Engenharia de Software da UNIFAE para saber mais sobre a ação!</p>
-
-                <div class="link-instagram">
-                    <a href="https://www.instagram.com/engsoftware.unifae/" target="_blank">
-                    <img class="instagram" src="img/instagram.png" alt="Logo instagram">
-                    <p>Engenharia de Software</p>
-                    </a>
-                </div>
-
-            </div>
+        <div class="logo logo2">
+            <img src="img/sempher.png" alt="Sempher Logo">
         </div>
-    </main>
+        <div class="logo logo3">
+            <img src="img/asw.png" alt="AWS Logo">
+        </div>
+    </div>
+    <div class="card-container">
+        <form class="form-container">
+            <h1 class="titulo-form">Preencha o Formulário</h1>
+            <div class="form-input-container" >
+                <label>Nome Completo</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira seu nome completo">
+            </div>
+
+            <div class="form-input-container">
+                <label>E-mail</label>
+                <input type="text" name="email" id="email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="form-input-container">
+            <label for="matricula">Matricula/RA</label>
+            <input type="text" name="matricula" id="matricula" placeholder="Digite seu RA:">
+            </div>
+
+            <div class="form-input-container">
+            <label>Data de nascimento</label>
+            <input type="date" name="nascimento" id="nascimento" placeholder="XX/XX/XXXX">
+            </div>
+        <div class="foto-form">
+            <label>Insira uma foto do seu rosto: </label>
+            <button type="button"><img src="img/camera-solid.svg"></button>
+        </div>
+
+            <div class="botao">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+    </div>
+</main>
 </body>
 </html>

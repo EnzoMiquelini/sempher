@@ -19,26 +19,25 @@ body {
     background-image: linear-gradient(157.09deg, #1E1E1E 7.69%, #362A4B 40.39%, #583C8B 65.01%, #784CC7 83.09%);
 }
 
-.logo>img {
+.logo > img{
     width: 350px;
 }
-
-main {
+main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.logo-container {
+.logo-container{
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 70px;
 }
 
-.card-container {
+.card-container{
     margin-top: 40px;
     width: 50%;
     height: 650px;
@@ -46,75 +45,18 @@ main {
     border-radius: 10px;
 }
 
-
-/* Final page */
-
-.thanks-container {
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .info-container{
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 40px 50px;
     justify-content: center;
     align-items: center;
     gap: 60px;
 }
 
-
-.thanks-container h1 {
-    margin-top: 40px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    color: #784CC7;
-}
-
-.success {
-    width: 128px;
-    margin-top: 60px;
-}
-
-.thanks-container p {
-    font-weight: 400;
-    font-size: 24px;
-    text-align: center;
-}
-
-.part {
-    padding: 40px;
-}
-
-.text-insta {
-    padding: 0 40px 40px 40px;
-}
-
-.link-instagram a {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-
-.instagram {
-    width: 40px;
-}
-
-.link-instagram p {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 49px;
-    color: #784CC7;
-}
-
 .info-title{
     font-size: 24px;
+    padding: 0px 53px;
     font-weight: bold;
     color: #754AC1;
     text-align: center;
@@ -135,7 +77,7 @@ main {
     font-size: 24px;
 }
 
-.btn-participar, button{
+.btn-participar{
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -146,215 +88,32 @@ main {
     text-align: center;
 }
 
-@media (max-width: 1200px){
-    .logo img{
-        width: 230px;
-    }
-
-    .logo-container{
-        gap: 45px;
-    }
-
-    .info-container{
-        gap: 35px;
-    }
-
-    .info-title{
-        font-size: 22px;
-    }
-
-    .info-p{
-        font-size: 22px;
-    }
-
-    .info-date{
-        font-size: 30px;
-    }
-
-    .info-participar{
-        font-size: 22px;
-        text-align: center;
-    }
-
-}
 @media (max-width: 768px) {
     .card-container{
         width: 85%;
     }
 
-
-.thanks-container h1 {
-    margin-top: 40px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    color: #784CC7;
-}
-
-.success {
-    width: 128px;
-    margin-top: 60px;
-}
-
-.thanks-container p {
-    font-weight: 400;
-    font-size: 24px;
-    text-align: center;
-}
-
-.part {
-    padding: 40px;
-}
-
-.text-insta {
-    padding: 0 40px 40px 40px;
-}
-
-.link-instagram a {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-
-.instagram {
-    width: 40px;
-}
-
-.link-instagram p {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 49px;
-    color: #784CC7;
-}
-
-@media (max-width: 1010px) {
-
-    /* Final page */
-    .thanks-container h1 {
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 39px;
+    .logo > img{
+        width: 181px;
     }
 
-    .thanks-container p {
-        font-size: 20px;
+    .logo:nth-child(2){
+        order: 1;
+    }
+    
+    
+    .logo:nth-child(2) > img{
+        width: 250px;
     }
 
-    .link-instagram p {
-        font-size: 20px;
-    }
-
-    .info-container {
+    .logo-container{
         display: flex;
-        flex-direction: column;
-        padding: 40px 50px;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
-    .info-title {
-        font-size: 24px;
-        padding: 0px 53px;
-        font-weight: bold;
-        color: #754AC1;
-        text-align: center;
-    }
-
-
-    .info-container{
-        gap: 30px;
-    }
-
-    .info-title{
-        font-size: 20px;
-    }
-
-    .info-p{
-        font-size: 20px;
-    }
-
-    .info-date{
-        font-size: 28px;
-    }
-
-    .info-participar{
-        font-size: 20px;
-        text-align: center;
+    .card-container{
+        margin-top: 0;
     }
 }
 
-    .info-p {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .info-date {
-        font-size: 32px;
-        color: #754AC1;
-    }
-
-    .info-participar {
-        font-weight: bold;
-        font-size: 24px;
-    }
-
-    .btn-participar {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        background-color: #754AC1;
-        padding: 20px;
-        border-radius: 10px;
-        width: 200px;
-        text-align: center;
-    }
-
-    @media (max-width: 768px) {
-        .card-container {
-            width: 85%;
-        }
-
-        .logo>img {
-            width: 181px;
-        }
-
-        .logo:nth-child(2) {
-            order: 1;
-        }
-
-
-        .logo:nth-child(2)>img {
-            width: 250px;
-        }
-
-        .logo-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .card-container {
-            margin-top: 0;
-        }
-
-        /* Final page */
-        .link-instagram a {
-            margin-top: 10px;
-        }
-    }
-
-    @media (max-width: 400px) {
-
-        /* Final page */
-        .link-instagram a {
-            margin: 0;
-        }
-
-        .link-instagram p {
-            font-size: 15px;
-        }
-    }
-}
