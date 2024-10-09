@@ -35,7 +35,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 60px;
 }
 
 .card-container {
@@ -46,6 +46,7 @@ main {
     border-radius: 10px;
 }
 
+
 /* Final page */
 
 .thanks-container {
@@ -55,6 +56,85 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.info-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #754AC1;
+    text-align: center;
+}
+
+.info-p{
+    font-size: 24px;
+    text-align: center;
+}
+
+.info-date{
+    font-size: 32px;
+    color: #754AC1;
+}
+
+.info-participar{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.btn-participar, button{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #754AC1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 1200px){
+    .logo img{
+        width: 230px;
+    }
+
+    .logo-container{
+        gap: 45px;
+    }
+
+    .info-container{
+        gap: 35px;
+    }
+
+    .info-title{
+        font-size: 22px;
+    }
+
+    .info-p{
+        font-size: 22px;
+    }
+
+    .info-date{
+        font-size: 30px;
+    }
+
+    .info-participar{
+        font-size: 22px;
+        text-align: center;
+    }
+
+}
+@media (max-width: 768px) {
+    .card-container{
+        width: 85%;
+    }
+
 
 .thanks-container h1 {
     margin-top: 40px;
@@ -135,6 +215,29 @@ main {
         color: #754AC1;
         text-align: center;
     }
+
+
+    .info-container{
+        gap: 30px;
+    }
+
+    .info-title{
+        font-size: 20px;
+    }
+
+    .info-p{
+        font-size: 20px;
+    }
+
+    .info-date{
+        font-size: 28px;
+    }
+
+    .info-participar{
+        font-size: 20px;
+        text-align: center;
+    }
+}
 
     .info-p {
         font-size: 24px;
