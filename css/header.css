@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 0;
+    /* Tela-Inicial */
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(157.09deg, #1E1E1E 7.69%, #362A4B 40.39%, #583C8B 65.01%, #784CC7 83.09%);
+}
+
+.logo > img{
+    width: 350px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.card-container{
+    margin-top: 40px;
+    width: 50%;
+    height: 650px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .card-container{
+        width: 85%;
+    }
+
+    .logo > img{
+        width: 181px;
+    }
+
+    .logo:nth-child(2){
+        order: 1;
+    }
+    
+    
+    .logo:nth-child(2) > img{
+        width: 250px;
+    }
+
+    .logo-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .card-container{
+        margin-top: 0;
+    }
+}
+
