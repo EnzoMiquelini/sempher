@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-VariableFont_wght.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +10,7 @@
 }
 
 body {
+    font-family: Montserrat;
     border: 0;
     /* Tela-Inicial */
     width: 100%;
@@ -13,17 +19,18 @@ body {
     background-image: linear-gradient(157.09deg, #1E1E1E 7.69%, #362A4B 40.39%, #583C8B 65.01%, #784CC7 83.09%);
 }
 
-.logo > img{
+.logo>img {
     width: 350px;
 }
-main{
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.logo-container{
+.logo-container {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -31,7 +38,7 @@ main{
     gap: 70px;
 }
 
-.card-container{
+.card-container {
     margin-top: 40px;
     width: 50%;
     height: 650px;
@@ -41,7 +48,7 @@ main{
 
 /* Final page */
 
-.thanks-container{
+.thanks-container {
     font-family: "Montserrat", sans-serif;
     display: flex;
     flex-direction: column;
@@ -49,32 +56,34 @@ main{
     justify-content: center;
 }
 
-.thanks-container h1{
+.thanks-container h1 {
     margin-top: 40px;
     font-weight: 700;
     font-size: 40px;
     line-height: 49px;
     color: #784CC7;
 }
-.success{
+
+.success {
     width: 128px;
     margin-top: 60px;
 }
 
-.thanks-container p{
+.thanks-container p {
     font-weight: 400;
     font-size: 24px;
     text-align: center;
 }
 
-.part{
+.part {
     padding: 40px;
 }
 
-.text-insta{
+.text-insta {
     padding: 0 40px 40px 40px;
 }
-.link-instagram a{
+
+.link-instagram a {
     margin-top: 40px;
     display: flex;
     align-items: center;
@@ -82,11 +91,11 @@ main{
     margin-bottom: 40px;
 }
 
-.instagram{
+.instagram {
     width: 40px;
 }
 
-.link-instagram p{
+.link-instagram p {
     font-weight: 700;
     font-size: 24px;
     line-height: 49px;
@@ -94,60 +103,108 @@ main{
 }
 
 @media (max-width: 1010px) {
+
     /* Final page */
-    .thanks-container h1{
+    .thanks-container h1 {
         font-weight: 700;
         font-size: 32px;
         line-height: 39px;
     }
 
-    .thanks-container p{
+    .thanks-container p {
         font-size: 20px;
     }
-    .link-instagram p{
+
+    .link-instagram p {
         font-size: 20px;
     }
-}
 
-@media (max-width: 768px) {
-    .card-container{
-        width: 85%;
-    }
-
-    .logo > img{
-        width: 181px;
-    }
-
-    .logo:nth-child(2){
-        order: 1;
-    }
-    
-    
-    .logo:nth-child(2) > img{
-        width: 250px;
-    }
-
-    .logo-container{
+    .info-container {
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-direction: column;
+        padding: 40px 50px;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
     }
 
-    .card-container{
-        margin-top: 0;
+    .info-title {
+        font-size: 24px;
+        padding: 0px 53px;
+        font-weight: bold;
+        color: #754AC1;
+        text-align: center;
     }
-     /* Final page */
-     .link-instagram a{
-        margin-top: 10px;
-     }
-}
 
-@media (max-width: 400px) {
-    /* Final page */
-    .link-instagram a{
-        margin: 0;
+    .info-p {
+        font-size: 24px;
+        text-align: center;
     }
-    .link-instagram p{
-        font-size: 15px;
+
+    .info-date {
+        font-size: 32px;
+        color: #754AC1;
+    }
+
+    .info-participar {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .btn-participar {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        background-color: #754AC1;
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .card-container {
+            width: 85%;
+        }
+
+        .logo>img {
+            width: 181px;
+        }
+
+        .logo:nth-child(2) {
+            order: 1;
+        }
+
+
+        .logo:nth-child(2)>img {
+            width: 250px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-container {
+            margin-top: 0;
+        }
+
+        /* Final page */
+        .link-instagram a {
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 400px) {
+
+        /* Final page */
+        .link-instagram a {
+            margin: 0;
+        }
+
+        .link-instagram p {
+            font-size: 15px;
+        }
     }
 }
