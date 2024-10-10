@@ -13,6 +13,22 @@
     <title>Ação Promocional</title>
 </head>
 <body>
+
+<dialog>
+    <div>
+        <div class="dialog-header">
+            <button class="close-button"><img src="img/x-solid.svg" alt="close-icon"></button>
+        </div>
+    </div>
+    <video id="video" width="400" height="400" autoplay></video>
+    <canvas id="canvas" width="400" height="300" style="margin:51px 0px;"></canvas>
+    <div class="photo-button-container">
+    <p>Favor tirar a foto em um ambiente claro</p>
+        <img src="img/rotate-right-solid.svg" width="20" height="20" alt="tirar outra foto">
+        <button id="take-photo-btn">Tirar foto</button>
+    </div>
+</dialog>
+
 <main>
     <div class="logo-container">
         <div class="logo logo1">
@@ -26,9 +42,9 @@
         </div>
     </div>
     <div class="card-container">
-        <form class="form-container">
+        <form class="form-container" enctype="multipart/form-data">
             <h1 class="titulo-form">Preencha o Formulário</h1>
-            <div class="form-input-container" >
+            <div class="form-input-container">
                 <label>Nome Completo</label>
                 <input type="text" name="nome" id="nome" placeholder="Insira seu nome completo">
             </div>
@@ -39,25 +55,27 @@
             </div>
 
             <div class="form-input-container">
-            <label for="matricula">Matricula/RA</label>
-            <input type="text" name="matricula" id="matricula" placeholder="Digite seu RA:">
+                <label for="matricula">Matricula/RA</label>
+                <input type="text" name="matricula" id="matricula" placeholder="Digite seu RA:">
             </div>
 
             <div class="form-input-container">
-            <label>Data de nascimento</label>
-            <input type="date" name="nascimento" id="nascimento" placeholder="XX/XX/XXXX">
+                <label for="dt_nascimento">Data de nascimento</label>
+                <input type="date" name="dt_nascimento" id="dt_nascimento" placeholder="XX/XX/XXXX">
             </div>
-        <div class="foto-form">
-            <label>Insira uma foto do seu rosto: </label>
-            <button type="button"><img src="img/camera-solid.svg"></button>
-        </div>
-
+            <div class="foto-form">
+                <label for="foto">Insira uma foto do seu rosto: </label>
+                <button id="foto-button" type="button">
+                    <img alt="camera-icon" src="img/camera-solid.svg">
+                </button>
+                <img src="img/check-solid.svg" width="20" height="20">
+            </div>
             <div class="botao">
                 <button class="formulario">Enviar</button>
             </div>
         </form>
-
     </div>
 </main>
+<script src="js/script.mjs" type="module"></script>
 </body>
 </html>

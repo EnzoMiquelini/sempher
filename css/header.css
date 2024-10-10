@@ -140,7 +140,9 @@ main {
     font-weight: bold;
     font-size: 24px;
 }
-
+button{
+    border: none;
+}
 .btn-participar, button {
     text-decoration: none;
     color: white;
@@ -216,6 +218,14 @@ main {
     font-weight: bold;
 }
 
+.photo-button-container{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
 .botao > button {
     width: 200px;
     height: 60px;
@@ -228,10 +238,22 @@ main {
     font-size: 18px;
 }
 
-
 input {
     outline: none;
     transition: all .2s ease-in-out;
+}
+
+dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 20px;
+}
+dialog::backdrop{
+    background: rgba(0,0,0,0.45);
 }
 
 input:focus {
@@ -242,6 +264,29 @@ input:focus {
 
 .btn-participar:hover, button:hover{
     background-color: #583C8B;
+}
+.dialog-header{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.close-button{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #ff4646;
+}
+.close-button > img{
+    width: 10px;
+    height: 10px;
+}
+
+.close-button:hover{
+    background: #c33131;
 }
 
 @media (max-width: 1200px) {
