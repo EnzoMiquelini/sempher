@@ -140,6 +140,7 @@ main {
     border-radius: 10px;
     width: 200px;
     text-align: center;
+    transition: all .25s ease;
 }
 
 .form-container {
@@ -227,6 +228,10 @@ input:focus {
     outline: 2px solid #754AC1;
     border: 1px solid #583C8B;
     box-shadow: 0 0 5px #784CC7;
+}
+
+.btn-participar:hover, button:hover{
+    background-color: #583C8B;
 }
 
 @media (max-width: 1200px) {
