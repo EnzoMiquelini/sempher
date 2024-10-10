@@ -218,10 +218,22 @@ main {
     font-size: 18px;
 }
 
-
 input {
     outline: none;
     transition: all .2s ease-in-out;
+}
+
+dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 20px;
+}
+dialog::backdrop{
+    background: rgba(0,0,0,0.45);
 }
 
 input:focus {

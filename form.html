@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="card-container">
-        <form class="form-container">
+        <form class="form-container" enctype="multipart/form-data">
             <h1 class="titulo-form">Preencha o Formulário</h1>
             <div class="form-input-container" >
                 <label>Nome Completo</label>
@@ -40,20 +40,28 @@
             </div>
 
             <div class="form-input-container">
-            <label>Data de nascimento</label>
-            <input type="date" name="nascimento" id="nascimento" placeholder="XX/XX/XXXX">
+            <label for="dt_nascimento">Data de nascimento</label>
+            <input type="date" name="dt_nascimento" id="dt_nascimento" placeholder="XX/XX/XXXX">
             </div>
         <div class="foto-form">
-            <label>Insira uma foto do seu rosto: </label>
-            <button type="button"><img src="img/camera-solid.svg"></button>
-        </div>
+            <label for="foto">Insira uma foto do seu rosto: </label>
 
+            <dialog>
+                <h1>teste</h1>
+            </dialog>
+
+            <button id="foto-button" type="button">
+                <img src="img/camera-solid.svg">
+            </button>
+            <input id="foto" name="foto" type="file" hidden>
+        </div>
             <div class="botao">
                 <button type="submit">Enviar</button>
             </div>
         </form>
-
     </div>
 </main>
+
+<script src="js/script.js"></script>
 </body>
 </html>
