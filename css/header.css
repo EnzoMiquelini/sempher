@@ -51,6 +51,13 @@ main {
     border-radius: 10px;
 }
 
+.container {
+    margin-top: 40px;
+    width: 50%;
+    height: 650px;
+    background: #fff;
+    border-radius: 10px;
+}
 
 /* Final page */
 
@@ -106,7 +113,7 @@ main {
     padding: 40px;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
 }
 
 .info-title {
@@ -125,7 +132,10 @@ main {
     font-size: 32px;
     color: #754AC1;
 }
-
+.info-date-close{
+    text-align: center;
+    color: #754AC1;
+}
 .info-participar {
     font-weight: bold;
     font-size: 24px;
@@ -265,12 +275,18 @@ input:focus {
     }
 
 }
-
+@media (max-width: 975px) {
+    .container{
+        height: 750px;
+    }
+}
 @media (max-width: 768px) {
     .card-container {
         width: 85%;
     }
-
+    .container {
+        width: 85%;
+    }
 
     .thanks-container h1 {
         margin-top: 40px;
@@ -409,6 +425,10 @@ input:focus {
             width: 85%;
         }
 
+        .container {
+            width: 85%;
+        }
+
         .logo > img {
             width: 181px;
         }
@@ -432,6 +452,9 @@ input:focus {
             margin-top: 0;
         }
 
+        .container {
+            margin-top: 0;
+        }
         /* Final page */
         .link-instagram a {
             margin-top: 10px;
@@ -462,6 +485,9 @@ input:focus {
 
     @media (max-width: 400px) {
 
+        .container{
+            height: 850px;
+        }
         /* Final page */
         .link-instagram a {
             margin: 0;
