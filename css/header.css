@@ -19,25 +19,31 @@ body {
     background-image: linear-gradient(157.09deg, #1E1E1E 7.69%, #362A4B 40.39%, #583C8B 65.01%, #784CC7 83.09%);
 }
 
-.logo > img{
+.logo > img {
     width: 350px;
 }
-main{
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.logo-container{
+.logo-container {
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 60px;
 }
 
-.card-container{
+.titulo-form {
+    color: #754AC1;
+    margin-bottom: 10px;
+}
+
+.card-container {
     margin-top: 40px;
     width: 50%;
     height: 650px;
@@ -45,39 +51,49 @@ main{
     border-radius: 10px;
 }
 
-.info-container{
+
+/* Final page */
+
+.thanks-container {
+    font-family: "Montserrat", sans-serif;
     display: flex;
     flex-direction: column;
-    padding: 40px 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
     justify-content: center;
     align-items: center;
     gap: 60px;
 }
 
-.info-title{
+.info-title {
     font-size: 24px;
-    padding: 0px 53px;
     font-weight: bold;
     color: #754AC1;
     text-align: center;
 }
 
-.info-p{
+.info-p {
     font-size: 24px;
     text-align: center;
 }
 
-.info-date{
+.info-date {
     font-size: 32px;
     color: #754AC1;
 }
 
-.info-participar{
+.info-participar {
     font-weight: bold;
     font-size: 24px;
 }
 
-.btn-participar{
+.btn-participar, button {
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -88,32 +104,308 @@ main{
     text-align: center;
 }
 
+.form-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.titulo-form {
+    font-size: 40px;
+}
+
+.form-input-container > label {
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-input-container > input {
+    padding: 12px;
+    border-radius: 7.5px;
+    border: 1px solid #D9D9D9;
+}
+
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.foto-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.foto-form > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #754AC1;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.foto-form > button > img {
+    background-color: #754AC1;
+    width: 23px;
+    height: 23px;
+}
+
+.foto-form > label {
+    font-weight: bold;
+}
+
+.botao > button {
+    width: 200px;
+    height: 60px;
+    font-weight: bold;
+    color: white;
+    background-color: #754AC1;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+input {
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+input:focus {
+    outline: 2px solid #754AC1;
+    border: 1px solid #583C8B;
+    box-shadow: 0 0 5px #784CC7;
+}
+
+@media (max-width: 1200px) {
+    .logo img {
+        width: 230px;
+    }
+
+    .logo-container {
+        gap: 45px;
+    }
+
+    .info-container {
+        gap: 35px;
+    }
+
+    .info-title {
+        font-size: 22px;
+    }
+
+    .info-p {
+        font-size: 22px;
+    }
+
+    .info-date {
+        font-size: 30px;
+    }
+
+    .info-participar {
+        font-size: 22px;
+        text-align: center;
+    }
+
+}
+
 @media (max-width: 768px) {
-    .card-container{
+    .card-container {
         width: 85%;
     }
 
-    .logo > img{
-        width: 181px;
+
+    .thanks-container h1 {
+        margin-top: 40px;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        color: #784CC7;
     }
 
-    .logo:nth-child(2){
-        order: 1;
-    }
-    
-    
-    .logo:nth-child(2) > img{
-        width: 250px;
+    .success {
+        width: 128px;
+        margin-top: 60px;
     }
 
-    .logo-container{
+    .thanks-container p {
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .part {
+        padding: 40px;
+    }
+
+    .text-insta {
+        padding: 0 40px 40px 40px;
+    }
+
+    .link-instagram a {
+        margin-top: 40px;
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
         gap: 10px;
+        margin-bottom: 40px;
     }
 
-    .card-container{
-        margin-top: 0;
+    .instagram {
+        width: 40px;
+    }
+
+    .link-instagram p {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 49px;
+        color: #784CC7;
+    }
+
+    @media (max-width: 1010px) {
+
+        /* Final page */
+        .thanks-container h1 {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+        }
+
+        .thanks-container p {
+            font-size: 20px;
+        }
+
+        .link-instagram p {
+            font-size: 20px;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            padding: 40px 50px;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .info-title {
+            font-size: 24px;
+            padding: 0px 53px;
+            font-weight: bold;
+            color: #754AC1;
+            text-align: center;
+        }
+
+
+        .info-container {
+            gap: 30px;
+        }
+
+        .info-title {
+            font-size: 20px;
+        }
+
+        .info-p {
+            font-size: 20px;
+        }
+
+        .info-date {
+            font-size: 28px;
+        }
+
+        .info-participar {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .titulo-form {
+            font-size: 1.6rem;
+        }
+
+    }
+;info-p {
+     font-size: 24px;
+     text-align: center;
+ }
+
+    .info-date {
+        font-size: 32px;
+        color: #754AC1;
+    }
+
+    .info-participar {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .btn-participar {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        background-color: #754AC1;
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .card-container {
+            width: 85%;
+        }
+
+        .logo > img {
+            width: 181px;
+        }
+
+        .logo:nth-child(2) {
+            order: 1;
+        }
+
+
+        .logo:nth-child(2) > img {
+            width: 250px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-container {
+            margin-top: 0;
+        }
+
+        /* Final page */
+        .link-instagram a {
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 400px) {
+
+        /* Final page */
+        .link-instagram a {
+            margin: 0;
+        }
+
+        .link-instagram p {
+            font-size: 15px;
+        }
     }
 }
 
