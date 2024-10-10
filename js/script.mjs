@@ -201,7 +201,6 @@ function tirarFoto(){
         if (stream) {
             stream.getTracks().forEach(track => track.stop())
         }
-        console.log(image_data_url);
     })
 
 }
@@ -241,8 +240,10 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
     const nasc = e.target.dt_nascimento.value
     const date = nasc.split('-')
+    const nascimento = `${date[2]}-${date[1]}-${date[0]}`
     const senha = `${date[2]}${date[1]}`
     const matricula = e.target.matricula.value
+    console.log(senha);
     if(!ras.includes(matricula.replaceAll('-', ''))){
         Swal.fire({
             icon: "error",
@@ -252,25 +253,43 @@ form.addEventListener('submit', (e) => {
         return
     }
 
+    // console.table({nome: e.target.nome.value,
+    //     email: e.target.email.value,
+    //     matricula: e.target.matricula.value,
+    //     dt_nascimento: e.target.dt_nascimento.value,
+    //     senha,
+    //     bio_face_identifier: image_data_url,
+    //     id_funcao: 311,
+    //     id_setor: 75,
+    //     estado_naturalidade: 'sp',
+    //     nacionalidade: 'brasil'});
+    //     return
+
     fetch('https://api-teste.safetowork.com.br/api/storePessoas/equipamento', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
+            'Content-Type': 'application/json',
             EquipmentToken: '1708|rcKKJDAm4eyJpdiI6InZrdk5sMldhUFIycGs2bHlENU44MWc9PSIsInZhbHVlIjoia1JYWEtiM1hLZ2JLOTFoUmV6SElvdz09IiwibWFjIjoiOWNmZmNiOGZhOTg3NTBhMDcwNzRjNDYwZWM1OGQwYzMyNzExMTljMzNhMmE2MGE3Nzc2N2UzOGI2NDFjNDc0MSIsInRhZyI6IiJ9vGKb5KErBs3WSFHtyXdrmMwNAA2AD9j1ec1fc79',
 
         },
         body: JSON.stringify({
             nome: e.target.nome.value,
             email: e.target.email.value,
-            matricula: e.target.matricula.value,
-            dt_nascimento: e.target.dt_nascimento.value,
+            matricula: matricula.replaceAll('-', ''),
+            dt_nascimento: nascimento,
             senha,
             bio_face_identifier: image_data_url,
             id_funcao: 311,
             id_setor: 75,
             estado_naturalidade: 'sp',
-            nacionalidade: 'brasil',
+            nacionalidade: 'brasileira',
+            status: 1,
+            id_grupo: 65,
+            id_empresa: 20,
+            tipo_usuario: 'colaborador'
         })
+        
     })
         .then(response => {
             if (response.ok) {
@@ -285,7 +304,7 @@ form.addEventListener('submit', (e) => {
             location.replace('success.html' )
         })
         .catch(error => {
-            console.error(error)
+            console.table(error.errors)
         })
 })
 
