@@ -303,7 +303,6 @@ input:focus {
 
         .info-title {
             font-size: 24px;
-            padding: 0px 53px;
             font-weight: bold;
             color: #754AC1;
             text-align: center;
@@ -336,7 +335,7 @@ input:focus {
         }
 
     }
-;info-p {
+.info-p {
      font-size: 24px;
      text-align: center;
  }
@@ -394,6 +393,28 @@ input:focus {
         .link-instagram a {
             margin-top: 10px;
         }
+
+        .info-container {
+            gap: 30px;
+        }
+
+        .info-title {
+            font-size: 20px;
+        }
+
+        .info-p {
+            font-size: 20px;
+        }
+
+        .info-date {
+            font-size: 28px;
+        }
+
+        .info-participar {
+            font-size: 20px;
+            text-align: center;
+        }
+
     }
 
     @media (max-width: 400px) {
