@@ -17,10 +17,11 @@
         </div>
     </div>
     <video id="video" width="400" height="400" autoplay></video>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="400" height="300" style="margin:51px 0px;"></canvas>
     <div class="photo-button-container">
     <p>Favor tirar a foto em um ambiente claro</p>
-        <button>Tirar foto</button>
+        <img src="img/rotate-right-solid.svg" width="20" height="20" alt="tirar outra foto">
+        <button id="take-photo-btn">Tirar foto</button>
     </div>
 </dialog>
 
@@ -63,7 +64,7 @@
                 <button id="foto-button" type="button">
                     <img alt="camera-icon" src="img/camera-solid.svg">
                 </button>
-                <input id="foto" name="foto" type="file" hidden>
+                <img src="img/check-solid.svg" width="20" height="20">
             </div>
             <div class="botao">
                 <button type="submit">Enviar</button>
