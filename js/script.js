@@ -193,7 +193,8 @@ fotoButton.addEventListener('click', async () => {
 
 function tirarFoto(){
     tirarOutraFoto.style.display = 'block'
-    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width = 800, canvas.height = 700);
     video.style.display = 'none'
     canvas.style.display = 'block'
     if (stream) {
@@ -208,7 +209,7 @@ function tirarFoto(){
     document.querySelector('.photo-button-container').append(btn)
     btn.addEventListener('click', () => {
         image_data_url = canvas.toDataURL('image/jpeg', 1)
-        console.log(image_data_url);
+        console.log(image_data_url.replaceAll('data:image/jpeg;base64,', '')),
         document.querySelector('.foto-form > img').style.display = 'block'
         if (stream) {
             stream.getTracks().forEach(track => track.stop())
@@ -330,6 +331,14 @@ form.addEventListener('submit', (e) => {
                 });
                 return
             } 
+            if(error = 'Ocorreu um problema ao tentar cadastrar a facial. Por favor, tente novamente.'){
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro",
+                    text: "Afaste-se ou aproxime-se da câmera!",
+                });
+                return
+            }
             if(error){
                 Swal.fire({
                     icon: "error",

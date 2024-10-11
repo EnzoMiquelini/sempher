@@ -538,13 +538,12 @@ input:focus {
         .link-instagram a {
             margin: 0;
         }
-
         .link-instagram p {
             font-size: 15px;
         }
         #canvas{
-            height: 300px;
-            width: 225px;
+            height: 225px;
+            width: 300px;
             margin: 0;
         }
     }
