@@ -281,18 +281,6 @@ form.addEventListener('submit', (e) => {
         return
     }
 
-    // console.table({nome: e.target.nome.value,
-    //     email: e.target.email.value,
-    //     matricula: e.target.matricula.value,
-    //     dt_nascimento: e.target.dt_nascimento.value,
-    //     senha,
-    //     bio_face_identifier: image_data_url,
-    //     id_funcao: 311,
-    //     id_setor: 75,
-    //     estado_naturalidade: 'sp',
-    //     nacionalidade: 'brasil'});
-    //     return
-
     fetch('https://api-teste.safetowork.com.br/api/storePessoas/equipamento', {
         method: 'POST',
         headers: {
@@ -307,7 +295,7 @@ form.addEventListener('submit', (e) => {
             matricula: matricula.replaceAll('-', ''),
             dt_nascimento: nascimento,
             senha,
-            bio_face_identifier: image_data_url,
+            bio_face_identifier: image_data_url.replaceAll('data:image/jpeg;base64,', ''),
             id_funcao: 311,
             id_setor: 75,
             estado_naturalidade: 'sp',
