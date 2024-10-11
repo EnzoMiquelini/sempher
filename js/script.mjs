@@ -168,8 +168,6 @@ const ras = [
 document.querySelector('.foto-form > img').style.display = 'none'
 
 fotoButton.addEventListener('click', async () => {
-    alert('aqui')
-    dialog.showModal()
     stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
     if (image_data_url) {
         canvas.style.display = 'block'
@@ -194,9 +192,9 @@ function tirarFoto(){
         btnTirarFoto.remove()
     }
     btn.innerText = 'Salvar'
+    btn.setAttribute('data-bs-dismiss', 'modal')
     document.querySelector('.photo-button-container').append(btn)
     btn.addEventListener('click', () => {
-        dialog.close()
         image_data_url = canvas.toDataURL('image/jpeg')
         document.querySelector('.foto-form > img').style.display = 'block'
         if (stream) {
@@ -229,7 +227,6 @@ tirarOutraFoto.addEventListener('click', async () => {
 })
 
 closeButton.addEventListener('click', () => {
-    dialog.close()
     canvas.style.display = 'none'
     video.style.display = 'block'
     if (stream) {
@@ -323,7 +320,22 @@ form.addEventListener('submit', (e) => {
             location.replace('success.html' )
         })
         .catch(error => {
-            console.table(error.errors)
+            if(error.errors){
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro",
+                    text: "Algo deu errado",
+                });
+                return
+            } 
+            if(error){
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro",
+                    text: "Matricula/RA já cadastrado!",
+                });
+                return
+            }
         })
 })
 
