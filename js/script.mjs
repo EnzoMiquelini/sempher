@@ -162,13 +162,10 @@ const ras = [
     "271053"
 ]
 
-
-
-
 document.querySelector('.foto-form > img').style.display = 'none'
 
 fotoButton.addEventListener('click', async () => {
-    stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    stream = await navigator.mediaDevices.getUserMedia({ video: true, facingMode: 'user', audio: false });
     if (image_data_url) {
         canvas.style.display = 'block'
         video.style.display = 'none'
