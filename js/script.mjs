@@ -11,7 +11,9 @@ const btn = document.createElement('button')
 const btnTirarFoto = document.createElement('button')
 let stream
 let image_data_url
-
+var getUserMedia = navigator.getUserMedia ||
+navigator.mozGetUserMedia ||
+navigator.webkitGetUserMedia;
 const ras = [
     "300663",
     "298195",
@@ -165,7 +167,7 @@ const ras = [
 document.querySelector('.foto-form > img').style.display = 'none'
 
 fotoButton.addEventListener('click', async () => {
-    stream = await navigator.mediaDevices.getUserMedia({ video: true, facingMode: 'user', audio: false });
+    stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
     if (image_data_url) {
         canvas.style.display = 'block'
         video.style.display = 'none'
