@@ -11,9 +11,11 @@ const btn = document.createElement('button')
 const btnTirarFoto = document.createElement('button')
 let stream
 let image_data_url
-var getUserMedia = navigator.getUserMedia ||
+
+const getUserMedia = navigator.getUserMedia ||
 navigator.mozGetUserMedia ||
 navigator.webkitGetUserMedia;
+
 const ras = [
     "300663",
     "298195",
@@ -171,10 +173,21 @@ fotoButton.addEventListener('click', async () => {
     if (image_data_url) {
         canvas.style.display = 'block'
         video.style.display = 'none'
+        document.querySelector('.foto-form > img').style.display = 'block'
     } else {
         video.srcObject = stream;
         canvas.style.display = 'none'
         tirarOutraFoto.style.display = 'none'
+        if(takePhoto){
+            takePhoto.remove()
+            if(btn){
+                btn.remove()
+            }
+            btnTirarFoto.id = 'take-photo-btn'
+            btnTirarFoto.innerText = 'Tirar foto'
+            btnTirarFoto.addEventListener('click', tirarFoto)
+            document.querySelector('.photo-button-container').append(btnTirarFoto)
+        }
     }
 })
 
