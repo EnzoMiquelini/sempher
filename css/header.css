@@ -536,7 +536,7 @@ input:focus {
     @media (max-width: 450px) {
 
         .container{
-            height: 850px;
+            height: 750px;
         }
         /* Final page */
         .link-instagram a {

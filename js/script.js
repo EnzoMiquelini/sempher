@@ -278,7 +278,7 @@ form.addEventListener('submit', (e) => {
         Swal.fire({
             icon: "error",
             title: "Erro",
-            text: "Matricula/RA inválido",
+            text: "Matricula/RA inválido!",
         });
         return
     }
@@ -327,11 +327,12 @@ form.addEventListener('submit', (e) => {
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
-                    text: "Algo deu errado",
+                    text: "Algo deu errado!",
                 });
                 return
             } 
             if(error = 'Ocorreu um problema ao tentar cadastrar a facial. Por favor, tente novamente.'){
+                document.querySelector('.foto-form > img').style.display = 'none'
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
@@ -339,7 +340,7 @@ form.addEventListener('submit', (e) => {
                 });
                 return
             }
-            if(error){
+            if(error = 'A matrícula fornecida já está em uso para esta empresa.'){
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
