@@ -334,7 +334,7 @@ form.addEventListener('submit', (e) => {
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
-                    text: error,
+                    text: "Matricula/RA já cadastrado!",
                 });
                 return
             }
