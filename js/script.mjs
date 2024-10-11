@@ -168,6 +168,7 @@ const ras = [
 document.querySelector('.foto-form > img').style.display = 'none'
 
 fotoButton.addEventListener('click', async () => {
+    alert('aqui')
     dialog.showModal()
     stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
     if (image_data_url) {
@@ -221,6 +222,7 @@ tirarOutraFoto.addEventListener('click', async () => {
         stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
         video.srcObject = stream;
         document.querySelector('.foto-form > img').style.display = 'none'
+        image_data_url = ''
     } else {
         stream.getTracks().forEach(track => track.stop())
     }
@@ -243,7 +245,24 @@ form.addEventListener('submit', (e) => {
     const nascimento = `${date[2]}-${date[1]}-${date[0]}`
     const senha = `${date[2]}${date[1]}`
     const matricula = e.target.matricula.value
-    console.log(senha);
+    if(!e.target.nome.value || !e.target.email.value || !e.target.matricula.value || !e.target.dt_nascimento.value) {
+        Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: "Preencha todos os campos!",
+        });
+        return
+    }
+
+    if(!image_data_url){
+        Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: "Tire uma foto!",
+        });
+        return
+    }
+    
     if(!ras.includes(matricula.replaceAll('-', ''))){
         Swal.fire({
             icon: "error",
