@@ -216,7 +216,11 @@ button{
     width: 23px;
     height: 23px;
 }
-
+.formulario{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .foto-form > label {
     font-weight: bold;
 }
