@@ -207,7 +207,8 @@ function tirarFoto(){
     btn.setAttribute('data-bs-dismiss', 'modal')
     document.querySelector('.photo-button-container').append(btn)
     btn.addEventListener('click', () => {
-        image_data_url = canvas.toDataURL('image/jpeg')
+        image_data_url = canvas.toDataURL('image/jpeg', 1)
+        console.log(image_data_url);
         document.querySelector('.foto-form > img').style.display = 'block'
         if (stream) {
             stream.getTracks().forEach(track => track.stop())
