@@ -273,7 +273,12 @@ form.addEventListener('submit', (e) => {
     const nascimento = `${date[2]}-${date[1]}-${date[0]}`
     const senha = `${date[2]}${date[1]}`
     const matricula = e.target.matricula.value
-
+    
+    function ValidarEmail (email) {
+        var emailPattern =  /^[_a-z]+(\.[_a-z]+)*@sou.fae.br$/;
+         return emailPattern.test(email); 
+    }
+        
     if (isLoading) {
         disableButton()
     }
@@ -288,7 +293,7 @@ form.addEventListener('submit', (e) => {
         });
         return
     }
-
+    
     if (!image_data_url) {
         setLoading(false)
         enableButton()
@@ -297,6 +302,18 @@ form.addEventListener('submit', (e) => {
             title: "Erro",
             text: "Tire uma foto!",
         });
+        return
+    }
+    
+    if (ValidarEmail(e.target.email.value) == false) {
+        setLoading(false)
+        enableButton()
+        Swal.fire({
+            icon: "error",
+            title: "E-mail inválido",
+            text: "Digite o e-mail institucional!",
+        });
+
         return
     }
 
