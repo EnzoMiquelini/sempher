@@ -324,6 +324,11 @@ input:focus {
         text-align: center;
     }
 
+    .titulo-form {
+        font-size: 32px;
+    }
+
+
 }
 @media (max-width: 975px) {
     .container{
@@ -439,10 +444,6 @@ input:focus {
             text-align: center;
         }
 
-        .titulo-form {
-            font-size: 1.6rem;
-        }
-
     }
 .info-p {
      font-size: 24px;
@@ -531,6 +532,10 @@ input:focus {
             text-align: center;
         }
 
+        .foto-form label{
+            font-size: 14px;
+        }   
+
     }
 
     @media (max-width: 450px) {
@@ -550,6 +555,16 @@ input:focus {
             width: 300px;
             margin: 0;
         }
+
+        .titulo-form {
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .form-input-container > label{
+            font-size: 14px !important;
+        }
+
     }
 }
 
