@@ -211,7 +211,21 @@ fotoButton.addEventListener('click', async () => {
 function tirarFoto() {
     tirarOutraFoto.style.display = 'block'
 
-    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width = 320, canvas.height = 240);
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    const getOrientation = window.innerHeight > innerWidth ? "portrait" : "landscape"
+
+    if(isMobile && getOrientation == "portrait"){
+        canvas.width = 240
+        canvas.height = 320
+    }
+    else{
+        canvas.width = 320
+        canvas.height = 240
+    }
+
+
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width = isMobile ? 240 : 320, canvas.height = isMobile ? 320 : 240);
+    
     video.style.display = 'none'
     canvas.style.display = 'block'
     if (stream) {
@@ -349,7 +363,6 @@ form.addEventListener('submit', (e) => {
             nacionalidade: 'brasileira',
             status: 1,
             id_grupo: 65,
-            // id_empresa: 20,
             id_empresa: 1,
             tipo_usuario: 'colaborador',
             primeiro_acesso: 0
