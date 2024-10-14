@@ -1,7 +1,6 @@
 const form = document.querySelector('.form-container')
 const fotoButton = document.querySelector('#foto-button')
 const closeButton = document.querySelector('.close-button')
-const dialog = document.querySelector('dialog')
 const video = document.getElementById('video')
 const takePhoto = document.getElementById('take-photo-btn')
 const canvas = document.getElementById('canvas')
@@ -9,12 +8,30 @@ const tirarOutraFoto = document.querySelector('.photo-button-container > img')
 
 const btn = document.createElement('button')
 const btnTirarFoto = document.createElement('button')
+const submitButton = document.querySelector(".formulario")
+
+
+let isLoading
+
+const setLoading = (state) => {
+    isLoading = state
+}
+const disableButton = () => {
+    submitButton.disabled = true
+    submitButton.innerHTML = `Enviando... <div class="loader"></div>`
+}
+
+const enableButton = () => {
+    submitButton.disabled = false
+    submitButton.innerHTML = 'Enviar'
+}
+
 let stream
 let image_data_url
 
 const getUserMedia = navigator.getUserMedia ||
-navigator.mozGetUserMedia ||
-navigator.webkitGetUserMedia;
+    navigator.mozGetUserMedia ||
+    navigator.webkitGetUserMedia;
 
 const ras = [
     "300663",
@@ -178,9 +195,9 @@ fotoButton.addEventListener('click', async () => {
         video.srcObject = stream;
         canvas.style.display = 'none'
         tirarOutraFoto.style.display = 'none'
-        if(takePhoto){
+        if (takePhoto) {
             takePhoto.remove()
-            if(btn){
+            if (btn) {
                 btn.remove()
             }
             btnTirarFoto.id = 'take-photo-btn'
@@ -191,7 +208,7 @@ fotoButton.addEventListener('click', async () => {
     }
 })
 
-function tirarFoto(){
+function tirarFoto() {
     tirarOutraFoto.style.display = 'block'
 
     canvas.getContext('2d').drawImage(video, 0, 0, canvas.width = 800, canvas.height = 700);
@@ -201,7 +218,7 @@ function tirarFoto(){
         stream.getTracks().forEach(track => track.stop())
     }
     takePhoto.remove()
-    if(btnTirarFoto){
+    if (btnTirarFoto) {
         btnTirarFoto.remove()
     }
     btn.innerText = 'Salvar'
@@ -209,7 +226,6 @@ function tirarFoto(){
     document.querySelector('.photo-button-container').append(btn)
     btn.addEventListener('click', () => {
         image_data_url = canvas.toDataURL('image/jpeg', 1)
-        console.log(image_data_url.replaceAll('data:image/jpeg;base64,', '')),
         document.querySelector('.foto-form > img').style.display = 'block'
         if (stream) {
             stream.getTracks().forEach(track => track.stop())
@@ -222,7 +238,7 @@ takePhoto.addEventListener('click', tirarFoto)
 
 tirarOutraFoto.addEventListener('click', async () => {
     if (stream) {
-        if(btn){
+        if (btn) {
             btn.remove()
         }
         btnTirarFoto.id = 'take-photo-btn'
@@ -251,12 +267,20 @@ closeButton.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+    setLoading(true)
     const nasc = e.target.dt_nascimento.value
     const date = nasc.split('-')
     const nascimento = `${date[2]}-${date[1]}-${date[0]}`
     const senha = `${date[2]}${date[1]}`
     const matricula = e.target.matricula.value
-    if(!e.target.nome.value || !e.target.email.value || !e.target.matricula.value || !e.target.dt_nascimento.value) {
+
+    if (isLoading) {
+        disableButton()
+    }
+
+    if (!e.target.nome.value || !e.target.email.value || !e.target.matricula.value || !e.target.dt_nascimento.value) {
+        setLoading(false)
+        enableButton()
         Swal.fire({
             icon: "error",
             title: "Erro",
@@ -265,7 +289,9 @@ form.addEventListener('submit', (e) => {
         return
     }
 
-    if(!image_data_url){
+    if (!image_data_url) {
+        setLoading(false)
+        enableButton()
         Swal.fire({
             icon: "error",
             title: "Erro",
@@ -273,8 +299,10 @@ form.addEventListener('submit', (e) => {
         });
         return
     }
-    
-    if(!ras.includes(matricula.replaceAll('-', ''))){
+
+    if (!ras.includes(matricula.replaceAll('-', ''))) {
+        setLoading(false)
+        enableButton()
         Swal.fire({
             icon: "error",
             title: "Erro",
@@ -305,10 +333,11 @@ form.addEventListener('submit', (e) => {
             status: 1,
             id_grupo: 65,
             id_empresa: 20,
+            // id_empresa: 1,
             tipo_usuario: 'colaborador',
             primeiro_acesso: 0
         })
-        
+
     })
         .then(response => {
             if (response.ok) {
@@ -318,39 +347,30 @@ form.addEventListener('submit', (e) => {
                 throw errors
             })
         })
-        .then(data => {
-            console.log(data)
-            location.replace('success.html' )
+        .then(() => {
+            setLoading(false)
+            enableButton()
+            location.replace('success.html')
         })
         .catch(error => {
-            if(error.errors){
+            setLoading(false)
+            enableButton()
+            if (error.message) {
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
-                    text: "Algo deu errado!",
+                    text: error.message,
                 });
                 return
-            } 
-            if(error = 'Ocorreu um problema ao tentar cadastrar a facial. Por favor, tente novamente.'){
+            }
+            if (error.error) {
                 document.querySelector('.foto-form > img').style.display = 'none'
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
-                    text: "Afaste-se ou aproxime-se da câmera!",
-                });
-                return
-            }
-            if(error = 'A matrícula fornecida já está em uso para esta empresa.'){
-                Swal.fire({
-                    icon: "error",
-                    title: "Erro",
-                    text: "Matricula/RA já cadastrado!",
+                    text: error.error,
                 });
                 return
             }
         })
 })
-
-
-
-
