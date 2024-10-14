@@ -211,7 +211,7 @@ fotoButton.addEventListener('click', async () => {
 function tirarFoto() {
     tirarOutraFoto.style.display = 'block'
 
-    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width = 800, canvas.height = 700);
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width = 320, canvas.height = 240);
     video.style.display = 'none'
     canvas.style.display = 'block'
     if (stream) {
@@ -225,7 +225,7 @@ function tirarFoto() {
     btn.setAttribute('data-bs-dismiss', 'modal')
     document.querySelector('.photo-button-container').append(btn)
     btn.addEventListener('click', () => {
-        image_data_url = canvas.toDataURL('image/jpeg', 1)
+        image_data_url = canvas.toDataURL('image/jpeg', 0.9)
         document.querySelector('.foto-form > img').style.display = 'block'
         if (stream) {
             stream.getTracks().forEach(track => track.stop())
