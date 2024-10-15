@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 body {
     font-family: Montserrat;
     border: 0;
@@ -38,6 +42,9 @@ main {
     gap: 60px;
 }
 
+.text-justify{
+    text-align: justify;
+}
 .titulo-form {
     color: #754AC1;
     margin-bottom: 10px;
@@ -46,15 +53,16 @@ main {
 .card-container {
     margin-top: 40px;
     width: 50%;
-    height: 650px;
+    min-height: 650px;
     background: #fff;
     border-radius: 10px;
 }
-
+#termos{
+    color: #784CC7;
+}
 .container {
     margin-top: 40px;
     width: 50%;
-    height: 650px;
     background: #fff;
     border-radius: 10px;
 }
@@ -113,7 +121,7 @@ main {
     padding: 40px;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .info-title {
@@ -124,7 +132,7 @@ main {
 }
 
 .info-p {
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -171,9 +179,6 @@ button{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-}
-a{
-    text-decoration: none;
 }
 .link-softjr{
     color: white;
@@ -359,11 +364,11 @@ input:focus {
         font-size: 32px;
     }
 }
-@media (max-width: 975px) {
+/* @media (max-width: 975px) {
     .container{
         height: 750px;
     }
-}
+} */
 @media (max-width: 768px) {
     .card-container {
         width: 85%;
@@ -569,9 +574,6 @@ input:focus {
 
     @media (max-width: 450px) {
 
-        .container{
-            height: 750px;
-        }
         /* Final page */
         .link-instagram a {
             margin: 0;

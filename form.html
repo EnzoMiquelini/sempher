@@ -18,7 +18,27 @@
 
 
     <main>
-        <div class="modal fade" data-bs-backdrop="static">
+        <div class="modal fade" id="termos-modal" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end">
+                        <button class="close-button" data-bs-dismiss="modal" aria-label="Close"><img
+                                src="img/x-solid.svg" alt="close-icon"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="text-center titulo-form">Termos de Uso</h3>
+                        <div class="p-3">
+                        <p class="text-justify">Declaro que estou ciente e concordo que as informações fornecidas neste formulário serão utilizadas pela Sempher Solutions Tecnologia e Locação de Maquinários LTDA, inscrita no CNPJ 40.079.072/0001-90, e pelo Centro Universitário das Faculdades Associadas de Ensino – UNIFAE, inscrito no CNPJ 59.766.774/0001-70, para finalidades administrativas, acadêmicas e de comunicação, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+                        
+                        <p class="text-justify">Autorizo o tratamento dos meus dados pessoais para as finalidades especificadas e estou ciente de que posso solicitar, a qualquer momento, o acesso, retificação ou exclusão dos meus dados pessoais.</p>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="foto-modal" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header d-flex justify-content-end">
@@ -79,10 +99,14 @@
                 </div>
                 <div class="foto-form">
                     <label for="foto">Insira uma foto do seu rosto: </label>
-                    <button id="foto-button" type="button" data-bs-toggle="modal" data-bs-target=".modal">
+                    <button id="foto-button" type="button" data-bs-toggle="modal" data-bs-target="#foto-modal">
                         <img alt="camera-icon" src="img/camera-solid.svg">
                     </button>
                     <img src="img/check-solid.svg" width="20" height="20">
+                </div>
+                <div class="check">
+                    <input type="checkbox" name="check" id="check">
+                    Concordo com os <strong id="termos" data-bs-toggle="modal" data-bs-target="#termos-modal">Termos de Uso</strong>
                 </div>
                 <div class="botao">
                     <button class="formulario">Enviar</button>
@@ -90,7 +114,8 @@
             </form>
         </div>
     </main>
-    <script src="js/script.js"></script>
+    <p class="softjr">Desenvolvido com <i class="fa fa-heart-o"></i> pelo <a href="https://labsoft-unifae.com.br/" class="link-softjr" target="_blank">SoftJr</a></p>
+    <script src="js/script.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

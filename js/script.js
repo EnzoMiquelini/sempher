@@ -287,12 +287,13 @@ form.addEventListener('submit', (e) => {
     const nascimento = `${date[2]}-${date[1]}-${date[0]}`
     const senha = `${date[2]}${date[1]}`
     const matricula = e.target.matricula.value
+    const check = e.target.check.checked
     
     function ValidarEmail (email) {
         var emailPattern =  /^[_a-z]+(\.[_a-z]+)*@sou.fae.br$/;
          return emailPattern.test(email); 
     }
-        
+    
     if (isLoading) {
         disableButton()
     }
@@ -307,7 +308,7 @@ form.addEventListener('submit', (e) => {
         });
         return
     }
-    
+
     if (!image_data_url) {
         setLoading(false)
         enableButton()
@@ -338,6 +339,17 @@ form.addEventListener('submit', (e) => {
             icon: "error",
             title: "Erro",
             text: "Matricula/RA inválido!",
+        });
+        return
+    }
+        
+    if(!check){
+        setLoading(false)
+        enableButton()
+        Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: "Concorde com os termos de uso!",
         });
         return
     }
