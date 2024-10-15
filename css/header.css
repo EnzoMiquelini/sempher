@@ -51,7 +51,6 @@ main {
 }
 
 .card-container {
-    margin-top: 40px;
     width: 50%;
     min-height: 650px;
     background: #fff;
@@ -59,9 +58,9 @@ main {
 }
 #termos{
     color: #784CC7;
+    cursor: pointer;
 }
 .container {
-    margin-top: 10px;
     width: 50%;
     background: #fff;
     border-radius: 10px;
@@ -121,7 +120,7 @@ main {
     padding: 40px 60px;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 .info-title {
@@ -132,7 +131,7 @@ main {
 }
 
 .info-p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 
@@ -176,10 +175,13 @@ button{
 }
 .softjr{
     color: white;
+    font-size: 14px !important;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-family: Montserrat !important;
 }
+
 .link-softjr{
     color: white;
 }
