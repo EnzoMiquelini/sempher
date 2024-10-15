@@ -52,9 +52,8 @@ main {
 }
 
 .container {
-    margin-top: 40px;
+    margin-top: 10px;
     width: 50%;
-    height: 650px;
     background: #fff;
     border-radius: 10px;
 }
@@ -110,10 +109,10 @@ main {
 .info-container {
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    justify-content: center;
+    padding: 40px 60px;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .info-title {
@@ -124,7 +123,7 @@ main {
 }
 
 .info-p {
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -138,7 +137,7 @@ main {
 }
 .info-participar {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
 }
 button{
     border: none;
@@ -359,11 +358,6 @@ input:focus {
         font-size: 32px;
     }
 }
-@media (max-width: 975px) {
-    .container{
-        height: 750px;
-    }
-}
 @media (max-width: 768px) {
     .card-container {
         width: 85%;
@@ -433,15 +427,6 @@ input:focus {
 
         .link-instagram p {
             font-size: 20px;
-        }
-
-        .info-container {
-            display: flex;
-            flex-direction: column;
-            padding: 40px 50px;
-            justify-content: center;
-            align-items: center;
-            gap: 60px;
         }
 
         .info-title {
@@ -569,9 +554,6 @@ input:focus {
 
     @media (max-width: 450px) {
 
-        .container{
-            height: 750px;
-        }
         /* Final page */
         .link-instagram a {
             margin: 0;
