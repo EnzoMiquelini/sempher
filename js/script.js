@@ -34,6 +34,13 @@ const getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia;
 
 const ras = [
+    "000609",
+    "000918",
+    "000395",
+    "000372",
+    "000345",
+    "000789",
+    "000494",
     "300663",
     "298195",
     "294354",
