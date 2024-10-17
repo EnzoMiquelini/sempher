@@ -547,10 +547,12 @@ input:focus {
         }
 
         .info-title {
+            text-align: justify;
             font-size: 20px;
         }
 
         .info-p {
+            text-align: justify;
             font-size: 20px;
         }
 
