@@ -384,7 +384,7 @@ form.addEventListener('submit', (e) => {
             nacionalidade: 'brasileira',
             status: 1,
             id_grupo: 65,
-            id_empresa: 1,
+            id_empresa: 20,
             tipo_usuario: 'colaborador',
             primeiro_acesso: 0
         })
