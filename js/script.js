@@ -299,8 +299,9 @@ form.addEventListener('submit', (e) => {
     const check = e.target.check.checked
     
     function ValidarEmail (email) {
-        var emailPattern =  /^[_a-z]+(\.[_a-z]+)*@sou.fae.br$/;
-         return emailPattern.test(email); 
+        const emailPatternAluno =  /^[_a-z]+(\.[_a-z]+)*@sou.fae.br$/;
+        const emailPatternProf =  /^[_a-z]+(\.[_a-z]+)*@prof.fae.br$/;
+        return emailPatternAluno.test(email) ||  emailPatternProf.test(email); 
     }
     
     if (isLoading) {
@@ -329,7 +330,7 @@ form.addEventListener('submit', (e) => {
         return
     }
     
-    if (ValidarEmail(e.target.email.value) == false) {
+    if (!ValidarEmail(e.target.email.value)) {
         setLoading(false)
         enableButton()
         Swal.fire({
